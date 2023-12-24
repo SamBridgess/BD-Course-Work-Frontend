@@ -1,4 +1,4 @@
-.single_panel {
+.single_operator_panel {
     background-color: #333333;
     width: auto;
     height: auto;
@@ -6,11 +6,17 @@
     display: flex;
     margin-bottom: 10px;
 }
-
+.operator_info {
+    width: 100%;
+}
 .operator_icon {
     height: 150px;
     width: 150px;
     margin-right: 20px;
+}
+.operator_name {
+    color: white;
+    font-size: 30px;
 }
 .select_equipment {
     flex-grow: 1;
@@ -20,9 +26,7 @@
     font-size: 20px;
     background-color: #FFFFFFB2;
 }
-.operator_info {
-    width: 100%;
-}
+
 .selection_block {
     justify-content: space-between;
     display: flex;

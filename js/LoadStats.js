@@ -1,6 +1,10 @@
-function loadStats() {
+window.onload = function (){
+    document.getElementById("stats_button").click()
+}
+async function loadStats() {
     const content = document.getElementById('content');
     content.innerHTML = '';
+    await requestUserStats();
 
     // Stats Header
     const statsHeader = document.createElement('div');
@@ -13,7 +17,7 @@ function loadStats() {
 
     let username = document.createElement('h1');
     username.className = 'stats_username';
-    username.innerHTML = 'SamBridges.-';
+    username.innerHTML = usernameReq;
     statsHeader.appendChild(username);
 
 
@@ -22,12 +26,12 @@ function loadStats() {
     stats.className = 'player_stats';
 
     let statsStr = '';
-    statsStr += 'Win Rate: ' + '1.0' + '<br>';
-    statsStr += 'Wins: ' + '100' + '<br>';
-    statsStr += 'Loses: ' + '100' + '<br>';
-    statsStr += 'K/D: ' + '2.0' + '<br>';
-    statsStr += 'Kills: ' + '50' + '<br>';
-    statsStr += 'Deaths: ' + '25' + '<br>';
+    statsStr += 'Win Rate: ' + winRateReq + '<br>';
+    statsStr += 'Wins: ' + winsReq + '<br>';
+    statsStr += 'Loses: ' + losesReq + '<br>';
+    statsStr += 'K/D: ' + kdReq + '<br>';
+    statsStr += 'Kills: ' + killsReq + '<br>';
+    statsStr += 'Deaths: ' + deathsReq + '<br>';
     stats.innerHTML = statsStr;
 
 

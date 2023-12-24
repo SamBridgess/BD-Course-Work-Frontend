@@ -1,13 +1,13 @@
-function loadOperators() {
+async function loadOperators() {
     const content = document.getElementById('content');
     content.innerHTML = '';
 
 ///////// for cycle
-    for(let i = 0; i < 7; i++){
+    for (let i = 0; i < 7; i++) {
         let nameStr = 'Ash';
 
         let singlePanel = document.createElement('div');
-        singlePanel.className = 'single_panel';
+        singlePanel.className = 'single_operator_panel';
 
 
         let icon = new Image();
@@ -20,8 +20,7 @@ function loadOperators() {
 
         let operatorName = document.createElement('h1');
         operatorName.innerHTML = nameStr;
-        operatorName.style.color = 'white';
-        operatorName.style.fontSize = '30px';
+        operatorName.className = 'operator_name';
         operatorInfo.appendChild(operatorName);
 
         let equipmentSelect = document.createElement('div');

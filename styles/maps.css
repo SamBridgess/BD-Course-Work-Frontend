@@ -1,0 +1,19 @@
+.single_map_panel {
+    background-color: #333333;
+    width: auto;
+    height: auto;
+    border-radius: 10px;
+    padding: 20px;
+    margin-bottom: 10px;
+    //background-image: url('../images/maps/Stadium.jpg');
+    //background-size: cover;
+}
+
+.map_name {
+    color: white;
+    font-size: 30px;
+}
+.map_stats {
+    font-size: 20px;
+    color: white;
+}
