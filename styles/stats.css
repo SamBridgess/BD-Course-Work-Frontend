@@ -1,0 +1,11 @@
+.stats_header {
+    display: flex;
+    align-items: center;
+}
+.stats_username {
+    font-size: 70px;
+    padding-left: 20px;
+}
+.player_stats {
+    font-size: 40px;
+}

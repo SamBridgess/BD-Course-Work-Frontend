@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Rainbow Six Helper</title>
+    <link rel="stylesheet" type="text/css" href="styles/main.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/buttons.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/images.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/stats.css"/>
+    <link rel="stylesheet" type="text/css" href="styles/operators.css"/>
+
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico"/>
+</head>
+
+<body style="">
+<div class="header">
+    <h2>Rainbow Six: Siege Helper</h2>
+</div>
+
+
+<div class="middle-section">
+    <div class="menu_buttons">
+        <input type="button" class="big_button" id="stats_button" value="Stats" onclick="loadStats()">
+        <input type="button" class="big_button" id="operators_button" value="Operators" onclick="loadOperators()">
+        <input type="button" class="big_button" id="maps_button" value="Maps" onclick="loadMaps()">
+    </div>
+
+
+
+    <div class="content" id="content">
+
+
+    </div>
+
+</div>
+
+
+
+</body>
+<script src="js/LoadStats.js"></script>
+<script src="js/LoadOperators.js"></script>
+<script src="js/LoadMaps.js"></script>
+
+</html>
