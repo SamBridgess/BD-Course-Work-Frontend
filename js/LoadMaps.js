@@ -1,7 +1,6 @@
 async function loadMaps() {
     const content = document.getElementById('content');
     content.innerHTML = '';
-    await requestUserMaps();
 
     for (let i = 0; i < maps.length; i++) {
         let mapNameStr = maps[i]['name'];

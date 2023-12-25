@@ -1,10 +1,6 @@
-window.onload = function (){
-    document.getElementById("stats_button").click()
-}
 async function loadStats() {
     const content = document.getElementById('content');
     content.innerHTML = '';
-    await requestUserStats();
 
     // Stats Header
     const statsHeader = document.createElement('div');

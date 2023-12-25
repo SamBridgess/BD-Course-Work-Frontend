@@ -1,9 +1,3 @@
-var currentUser = 'AshMainNoBrain'
-
-var usernameReq, levelReq, rankReq, currencyReq,
-    winRateReq, winsReq, losesReq, kdReq, killsReq, deathsReq;
-var maps = [];
-
 let statsOfUserUrl = 'http://localhost:52420/api/v1/users/' + currentUser;
 async function requestUserStats(){
     await (await fetch(statsOfUserUrl, {
