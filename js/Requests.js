@@ -1,8 +1,10 @@
-let statsOfUserUrl = 'http://localhost:52420/api/v1/users/SamBridges.-';
+var currentUser = 'AshMainNoBrain'
+
 var usernameReq, levelReq, rankReq, currencyReq,
     winRateReq, winsReq, losesReq, kdReq, killsReq, deathsReq;
-
 var maps = [];
+
+let statsOfUserUrl = 'http://localhost:52420/api/v1/users/' + currentUser;
 async function requestUserStats(){
     await (await fetch(statsOfUserUrl, {
         method: "GET",
@@ -25,7 +27,7 @@ function setUserStats(data){
     deathsReq = data['stats']['deaths'];
 }
 
-let mapsOfUserUrl = 'http://localhost:52420/api/v1/statistics/SamBridges.-';
+let mapsOfUserUrl = 'http://localhost:52420/api/v1/statistics/' + currentUser;
 
 async function requestUserMaps(){
     await (await fetch(mapsOfUserUrl, {

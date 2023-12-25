@@ -3,9 +3,34 @@
     align-items: center;
 }
 .stats_username {
-    font-size: 70px;
-    padding-left: 20px;
+    font-size: 50px;
 }
 .player_stats {
     font-size: 40px;
+}
+.renown_block {
+    background-color: #333333;
+    display: flex;
+    color: white;
+    padding: 15px;
+    margin-top: 10px;
+    border-radius: 20px;
+    align-items: center;
+    border: solid 5px #fbda06;
+}
+.renown_value {
+    font-size: 40px;
+}
+.level_block {
+    position: relative;
+    margin-right: 10px;
+}
+.level_value {
+    font-size: 35px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    color: white;
 }
