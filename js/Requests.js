@@ -22,7 +22,6 @@ function setUserStats(data){
 }
 
 let mapsOfUserUrl = 'http://localhost:52420/api/v1/statistics/' + currentUser;
-
 async function requestUserMaps(){
     await (await fetch(mapsOfUserUrl, {
         method: "GET",
@@ -32,6 +31,30 @@ async function requestUserMaps(){
         }
     );
 }
-function setUserMaps(data){
 
+var opers = [];
+let operatorsOfUserUrl = 'http://localhost:52420/api/v1/users/' + currentUser +'/operators/';
+async function requestUserOperators(){
+    for(let i = 0; i < opersNameTemp.length; i++) {
+        await (await fetch(operatorsOfUserUrl + opersNameTemp[i], {
+            method: "GET",
+        })).json().then(
+            function (data){
+                opers.push(data);
+            }
+        );
+    }
+}
+
+let weaponAttachmentsUrl =
+    'http://localhost:52420/api/v1/users/' + currentUser + '/operators/';
+
+async function requestWeaponAttachments(operatorName, weapon){
+    await (await fetch(operatorsOfUserUrl + operatorName + '/weapons/' + weapon, {
+        method: "GET",
+    })).json().then(
+        function (data){
+            requestedWeapon = data;
+        }
+    );
 }
