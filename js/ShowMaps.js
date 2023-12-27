@@ -1,4 +1,6 @@
-async function loadMaps() {
+async function showMaps() {
+    if(currentWindow === 'maps') return;
+    currentWindow = 'maps';
     const content = document.getElementById('content');
     content.innerHTML = '';
 
@@ -21,12 +23,12 @@ async function loadMaps() {
         stats.className = 'map_stats';
 
         let statsStr = '';
-        statsStr += 'Difficulty: ' + maps[i]['difficulty'] + '<br>';
-        statsStr += 'Rounds played: ' + maps[i]['roundsPlayed'] + '<br>';
+        statsStr += '<b>' + 'Difficulty: ' + '</b>' + maps[i]['difficulty'] + '<br>';
+        statsStr += '<b>' + 'Rounds played: ' + '</b>' + maps[i]['roundsPlayed'] + '<br>';
         if (maps[i]['ranked']) {
-            statsStr += '<strong>' + 'Ranked' + '</strong>' + '<br>';
+            statsStr += '<b style="color:green;">' + 'Ranked' + '</b>' + '<br>';
         } else {
-            statsStr += '<strong>' + 'Unranked' + '</strong>' + '<br>';
+            statsStr += '<b style="color:red;">' + 'Unranked' + '</b>' + '<br>';
         }
         stats.innerHTML = statsStr;
         singlePanel.appendChild(stats);

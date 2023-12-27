@@ -32,7 +32,7 @@ async function requestUserMaps(){
     );
 }
 
-var opers = [];
+var singleTempOperator = [];
 let operatorsOfUserUrl = 'http://localhost:52420/api/v1/users/' + currentUser +'/operators/';
 async function requestUserOperators(){
     for(let i = 0; i < opersNameTemp.length; i++) {
@@ -40,7 +40,7 @@ async function requestUserOperators(){
             method: "GET",
         })).json().then(
             function (data){
-                opers.push(data);
+                singleTempOperator.push(data);
             }
         );
     }

@@ -1,11 +1,13 @@
-var opersNameTemp = ['Sledge', 'Ash', 'IQ', 'Rook'];
+let opersNameTemp = ['Sledge', 'Ash', 'IQ', 'Rook'];
 
-async function loadOperators() {
+async function showOperators() {
+    if(currentWindow === 'operators') return;
+    currentWindow = 'operators';
     const content = document.getElementById('content');
     content.innerHTML = '';
 
     for(let i = 0; i < opersNameTemp.length; i++){
-        let oper = opers[i];
+        let operJSON = singleTempOperator[i];
         let nameStr = opersNameTemp[i];
 
         let singlePanel = document.createElement('div');
@@ -14,7 +16,7 @@ async function loadOperators() {
 
 
         let icon = new Image();
-        if(oper['team'])
+        if(operJSON['team'])
             icon.src = '../images/attacker_icons/' + nameStr + '.png';
         else
             icon.src = '../images/defender_icons/' + nameStr + '.png';
@@ -33,14 +35,19 @@ async function loadOperators() {
 
         let operatorStats = document.createElement('div');
         let statsStr = '';
-        statsStr += 'Speed: ' + oper['speed'] + '<br>';
-        statsStr += 'Armor: ' + oper['armor'] + '<br>';
-        statsStr += 'Team: ' + oper['team'] + '<br>';
-        statsStr += 'Ability: ' + oper['ability'] + '<br>';
-        statsStr += 'Price: ' + oper['price'] + '<br>';
-        statsStr += 'Win Rate: ' + oper['winRate'] + '<br>';
-        statsStr += 'Round Played: ' + oper['roundsPlayed'] + '<br>';
-        statsStr += 'Difficulty: ' + oper['difficulty'] + '<br>';
+        statsStr += '<b>' + 'Speed: ' + '</b>' + operJSON['speed'] + '<br>';
+        statsStr += '<b>' + 'Armor: ' + '</b>' + operJSON['armor'] + '<br>';
+        if(operJSON['team'])
+            statsStr += '<b>' + 'Team: ' + '</b>' + 'Attack' + '<br>';
+        else
+            statsStr += '<b>' + 'Team: ' + '</b>' + 'Defence' + '<br>';
+
+
+        statsStr += '<b>' + 'Ability: ' + '</b>' + operJSON['ability'] + '<br>';
+        statsStr += '<b>' + 'Price: ' + '</b>' + operJSON['price'] + '<br>';
+        statsStr += '<b>' + 'Win Rate: ' + '</b>' + operJSON['winRate'] + '<br>';
+        statsStr += '<b>' + 'Round Played: ' + '</b>' + operJSON['roundsPlayed'] + '<br>';
+        statsStr += '<b>' + 'Difficulty: ' + '</b>' + operJSON['difficulty'] + '<br>';
         operatorStats.innerHTML = statsStr;
         operatorStats.style.color = 'white';
         operatorInfo.appendChild(operatorStats);
@@ -75,12 +82,12 @@ async function loadOperators() {
         let selectionBlock = document.createElement('div');
         selectionBlock.className = 'selection_block';
 
-        let primaryWeaponSelect = createWeaponSelect(oper['weapons'], true);
+        let primaryWeaponSelect = createWeaponSelect(operJSON['weapons'], true);
         primaryWeaponSelect.id = nameStr + '_primary_select';
-        let secondaryWeaponSelect = createWeaponSelect(oper['weapons'], false);
+        let secondaryWeaponSelect = createWeaponSelect(operJSON['weapons'], false);
         secondaryWeaponSelect.id = nameStr + '_secondary_select';
-        let gadgetSelect = createSelect(oper['gadgets']);
-        let skinSelect = createSelect(oper['skins']);
+        let gadgetSelect = createSelect(operJSON['gadgets']);
+        let skinSelect = createSelect(operJSON['skins']);
         selectionBlock.appendChild(primaryWeaponSelect);
         selectionBlock.appendChild(secondaryWeaponSelect);
         selectionBlock.appendChild(gadgetSelect);

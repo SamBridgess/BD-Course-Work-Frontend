@@ -25,13 +25,13 @@
     <div id="overlay"></div>
 
     <div class="menu_buttons">
-        <input type="button" class="big_button" id="stats_button" value="Stats" onclick="loadStats()">
-        <input type="button" class="big_button" id="operators_button" value="Operators" onclick="loadOperators()">
-        <input type="button" class="big_button" id="maps_button" value="Maps" onclick="loadMaps()">
+        <input type="button" class="big_button" id="stats_button" value="Stats" onclick="showStats()">
+        <input type="button" class="big_button" id="operators_button" value="Operators" onclick="showOperators()">
+        <input type="button" class="big_button" id="maps_button" value="Maps" onclick="showMaps()">
     </div>
 
     <div id="popup" style="display: none">
-        <div id="close_popup_button" onclick="closePopup()"></div>
+        <div id="close_popup_button" onclick="closePopup()">x</div>
         <div id="popup_content">
 
         </div>
@@ -51,8 +51,8 @@
 <script src="js/Requests.js"></script>
 
 
-<script src="js/LoadStats.js"></script>
-<script src="js/LoadOperators.js"></script>
-<script src="js/LoadMaps.js"></script>
+<script src="js/ShowStats.js"></script>
+<script src="js/ShowOperators.js"></script>
+<script src="js/ShowMaps.js"></script>
 
 </html>

@@ -1,4 +1,7 @@
-async function loadStats() {
+async function showStats() {
+    if(currentWindow === 'stats') return;
+    currentWindow = 'stats';
+
     const content = document.getElementById('content');
     content.innerHTML = '';
 
@@ -60,13 +63,13 @@ async function loadStats() {
     stats.className = 'player_stats';
 
     let statsStr = '';
-    statsStr += 'Rank: ' + rankReq + '<br>';
-    statsStr += 'Win Rate: ' + winRateReq + '<br>';
-    statsStr += 'Wins: ' + winsReq + '<br>';
-    statsStr += 'Loses: ' + losesReq + '<br>';
-    statsStr += 'K/D: ' + kdReq + '<br>';
-    statsStr += 'Kills: ' + killsReq + '<br>';
-    statsStr += 'Deaths: ' + deathsReq + '<br>';
+    statsStr += '<b>' + 'Rank: ' + '</b>' + rankReq + '<br>';
+    statsStr += '<b>' + 'Win Rate: ' + '</b>' + winRateReq + '<br>';
+    statsStr += '<b>' + 'Wins: ' + '</b>' + winsReq + '<br>';
+    statsStr += '<b>' + 'Loses: ' + '</b>' + losesReq + '<br>';
+    statsStr += '<b>' + 'K/D: ' + '</b>' + kdReq + '<br>';
+    statsStr += '<b>' + 'Kills: ' + '</b>' + killsReq + '<br>';
+    statsStr += '<b>' + 'Deaths: ' + '</b>' + deathsReq + '<br>';
     stats.innerHTML = statsStr;
 
 
