@@ -6,10 +6,11 @@ var maps = [];
 
 var currentWindow;
 
+var port = '64789';
 window.onload = async function () {
     await requestUserStats();
     await requestUserMaps();
-    await requestUserOperators(opersNameTemp);
+
 
     document.getElementById("stats_button").click()
 }

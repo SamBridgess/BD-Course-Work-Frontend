@@ -1,4 +1,6 @@
-let statsOfUserUrl = 'http://localhost:52420/api/v1/users/' + currentUser;
+
+
+let statsOfUserUrl = 'http://localhost:' + port +'/api/v1/users/' + currentUser;
 async function requestUserStats(){
     await (await fetch(statsOfUserUrl, {
         method: "GET",
@@ -21,7 +23,7 @@ function setUserStats(data){
     deathsReq = data['stats']['deaths'];
 }
 
-let mapsOfUserUrl = 'http://localhost:52420/api/v1/statistics/' + currentUser;
+let mapsOfUserUrl = 'http://localhost:' + port +'/api/v1/statistics/' + currentUser;
 async function requestUserMaps(){
     await (await fetch(mapsOfUserUrl, {
         method: "GET",
@@ -32,22 +34,22 @@ async function requestUserMaps(){
     );
 }
 
-var singleTempOperator = [];
-let operatorsOfUserUrl = 'http://localhost:52420/api/v1/users/' + currentUser +'/operators/';
+var allTempOperators = [];
+let operatorsOfUserUrl = 'http://localhost:' + port +'/api/v1/users/' + currentUser +'/operators/';
 async function requestUserOperators(){
     for(let i = 0; i < opersNameTemp.length; i++) {
         await (await fetch(operatorsOfUserUrl + opersNameTemp[i], {
             method: "GET",
         })).json().then(
             function (data){
-                singleTempOperator.push(data);
+                allTempOperators.push(data);
             }
         );
     }
 }
 
 let weaponAttachmentsUrl =
-    'http://localhost:52420/api/v1/users/' + currentUser + '/operators/';
+    'http://localhost:' + port +'/api/v1/users/' + currentUser + '/operators/';
 
 async function requestWeaponAttachments(operatorName, weapon){
     await (await fetch(operatorsOfUserUrl + operatorName + '/weapons/' + weapon, {

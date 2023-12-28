@@ -12,14 +12,14 @@ async function showStats() {
 
     let pfp = new Image();
     pfp.className = 'profile_picture';
-    pfp.src = '../images/default_pfp.jpg';
+    pfp.src = 'images/default_pfp.jpg';
     statsHeader.appendChild(pfp);
 
     let levelBlock = document.createElement('div');
     levelBlock.className = 'level_block';
     let levelIcon = new Image();
     levelIcon.className = 'level_icon';
-    levelIcon.src = '../images/level_icon.png';
+    levelIcon.src = 'images/level_icon.png';
     let levelValue = document.createElement('div');
     levelValue.className = 'level_value';
     levelValue.innerHTML = levelReq;
@@ -45,7 +45,7 @@ async function showStats() {
     let renownBlock = document.createElement('div');
     renownBlock.className = 'renown_block';
     let renownIcon = new Image();
-    renownIcon.src = '../images/renown_icon.png';
+    renownIcon.src = 'images/renown_icon.png';
     renownIcon.className = 'renown_icon';
     let renownValue = document.createElement('div');
     renownValue.className = 'renown_value';

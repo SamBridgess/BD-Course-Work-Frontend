@@ -5,7 +5,7 @@ document.getElementById('login-btn').addEventListener('click', function() {
 
 
     // Redirect to the main page after successful login
-    window.location.href = 'index.html';
+    window.location.href = 'main_page.html';
 
     // You can also store the username in a cookie or session storage for future use
     sessionStorage.setItem('username', username);

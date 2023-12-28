@@ -11,7 +11,7 @@ async function showMaps() {
         singlePanel.className = 'single_map_panel';
         singlePanel.style.backgroundImage =
             'linear-gradient(to left, transparent, #333333 70%), ' +
-            'url("../images/maps/' + mapNameStr + '.jpg")';
+            'url("images/maps/' + mapNameStr + '.jpg")';
 
         let mapName = document.createElement('div');
         mapName.className = 'map_name';

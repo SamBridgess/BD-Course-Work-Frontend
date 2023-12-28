@@ -28,28 +28,32 @@ async function openPopup(type, operatorName) {
     handleTitle.innerHTML = 'Handles: ';
     handleTitle.className = 'attachments_title';
     popup.appendChild(handleTitle);
-    let handleSelect = createSelect(requestedWeapon['handles']);
+    let handleSelect = createOtherSelect(requestedWeapon['handles'], requestedWeapon['selectedHandle']);
+    handleSelect.onchange = function () { sendUpdatedAttachments('change_handle', selector.value, this.value, operatorName)};
     popup.appendChild(handleSelect);
 
     let sightTitle = document.createElement('h1');
     sightTitle.innerHTML = 'Sights: ';
     sightTitle.className = 'attachments_title';
     popup.appendChild(sightTitle);
-    let sightSelect = createSelect(requestedWeapon['sights']);
+    let sightSelect = createOtherSelect(requestedWeapon['sights'], requestedWeapon['selectedSight']);
+    sightSelect.onchange = function () { sendUpdatedAttachments('change_sight', selector.value, this.value, operatorName)};
     popup.appendChild(sightSelect);
 
     let nozzleTitle = document.createElement('h1');
     nozzleTitle.innerHTML = 'Nozzles: ';
     nozzleTitle.className = 'attachments_title';
     popup.appendChild(nozzleTitle);
-    let nozzleSelect = createSelect(requestedWeapon['nozzles']);
+    let nozzleSelect =  createOtherSelect(requestedWeapon['nozzles'], requestedWeapon['selectedNozzle']);
+    nozzleSelect.onchange = function () { sendUpdatedAttachments('change_nozzle', selector.value, this.value, operatorName)};
     popup.appendChild(nozzleSelect);
 
     let skinTitle = document.createElement('h1');
     skinTitle.innerHTML = 'Skins: ';
     skinTitle.className = 'attachments_title';
     popup.appendChild(skinTitle);
-    let skinSelect = createSelect(requestedWeapon['skins']);
+    let skinSelect =  createOtherSelect(requestedWeapon['skins'], requestedWeapon['selectedSkin']);
+    skinSelect.onchange = function () { sendUpdatedAttachments('change_skin', selector.value, this.value, operatorName)};
     popup.appendChild(skinSelect);
 }
 
